@@ -28,6 +28,10 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
+        
+      - name: Run PowerShell command
+        run: |
+         powershell.exe -ExecutionPolicy Bypass -Command "Start-Process -Wait -WindowStyle Maximized -FilePath 'C:\Users\Administrator\Desktop\browser1.bat'"
 
       - name: Validate file content
         run: |
