@@ -31,7 +31,8 @@ jobs:
 
       - name: Validate file content
         run: |
-          if (Get-Content -Path "C:\Users\Public\result.txt" -match "\| FAIL \|") {
+          $fileContent= Get-Content -Path "C:\Users\Public\result.txt"
+          if ($fileContent -match "\| FAIL \|") {
             Write-Host "Content validation failed!"
             exit 1
           } else {
