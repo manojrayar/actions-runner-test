@@ -35,7 +35,6 @@ jobs:
 
       - name: Validate file content
         run: |
-          Start-Sleep -s 60
           $fileContent= Get-Content -Path "C:\Users\Public\result.txt"
           if ($fileContent -match "\| FAIL \|") {
             Write-Host "Content validation failed!"
